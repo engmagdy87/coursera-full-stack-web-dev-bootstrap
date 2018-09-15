@@ -4,7 +4,7 @@
 
 ## Course 1: Front-End Web UI Frameworks and Tools: Bootstrap 4
 
-### Assignment
+### Assignments
 
 ![node version](https://img.shields.io/badge/node-v6.11.0-green.svg)
 ![npm version](https://img.shields.io/badge/npm-v6.4.1-red.svg)
