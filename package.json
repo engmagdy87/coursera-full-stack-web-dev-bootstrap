@@ -13,5 +13,7 @@
   "devDependencies": {
     "lite-server": "^2.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  }
 }
