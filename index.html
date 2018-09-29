@@ -30,7 +30,7 @@
                             Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginBtn">
                         <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -170,7 +170,7 @@
                             <img src="img/logo.png" class="img-fluid">
                         </div>
                         <div class="col-12 col-sm-6 align-self-center">
-                            <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reservationModal">Reserve
+                            <a role="button" class="btn btn-block nav-link btn-warning" id="reserveBtn">Reserve
                                 Table</a>
                         </div>
                     </div>
@@ -233,6 +233,9 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span id="carousel-button-icon" class="fa fa-pause"></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -344,7 +347,32 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#mycarousel").carousel({ interval: 2000 });
+            $("#carouselButton").click(function () {
+                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("span").removeClass('fa-pause');
+                    $("#carouselButton").children("span").addClass('fa-play');
+                }
+                else if ($("#carouselButton").children("span").hasClass('fa-play')) {
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("span").removeClass('fa-play');
+                    $("#carouselButton").children("span").addClass('fa-pause');
+                }
+            });
+        });
+    </script>
+    <script>
+        $("#reserveBtn").click(function () {
+            $('#reservationModal').modal('toggle')
+        });
+        $("#loginBtn").click(function () {
+            $('#loginModal').modal('toggle')
+        });
 
+    </script>
 </body>
 
 </html>
